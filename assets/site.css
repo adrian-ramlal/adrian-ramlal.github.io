@@ -1,0 +1,135 @@
+/* Homepage. Plain academic layout: one column, text links, papers with thumbnails. */
+
+:root {
+  --text: #1a1a1a;
+  --muted: #6a6a6a;
+  --link: #1772d0;
+  --hl: #fff9d6;
+  --rule: #e6e6e6;
+  --note: #c0392b;
+  --font: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #fff; color: var(--text); font: 15px/1.55 var(--font); }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 2px; }
+a:focus-visible, summary:focus-visible, button:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; border-radius: 2px; }
+img { display: block; max-width: 100%; }
+p { margin: 0 0 10px; }
+
+.wrap { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- Header ---------- */
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr 190px;
+  gap: 40px;
+  align-items: center;
+  padding: 48px 0 6px;
+}
+.name { font-size: 32px; font-weight: 400; text-align: center; margin: 0 0 16px; letter-spacing: 0.2px; }
+.links { text-align: center; margin: 16px 0 0; }
+.photo { width: 190px; height: 190px; border-radius: 50%; object-fit: cover; }
+
+/* ---------- Sections ---------- */
+
+h2 { font-size: 22px; font-weight: 400; margin: 44px 0 10px; }
+.lead { margin-bottom: 18px; }
+.hl { background: var(--hl); padding: 1px 2px; }
+
+/* ---------- Papers ---------- */
+
+.paper {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 26px;
+  align-items: center;
+  padding: 20px 18px;
+  border-radius: 6px;
+}
+.paper.highlight { background: var(--hl); }
+.paper .title { font-weight: 700; }
+.me { font-weight: 700; }
+.note { color: var(--note); }
+.paper .desc { margin: 8px 0 0; }
+
+/* Two stacked images; the second fades in on hover, keyboard focus, or (touch) scroll. */
+.media { display: block; color: var(--muted); }
+.media:hover { text-decoration: none; }
+.frame {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 150px;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.55s ease;
+}
+.cap { position: relative; display: block; height: 18px; margin-top: 6px; font-size: 12px; text-align: center; }
+.cap span { position: absolute; inset: 0; transition: opacity 0.55s ease; }
+.frame .b, .cap .b { opacity: 0; }
+.paper:hover .b, .paper:focus-within .b, .paper.play .b { opacity: 1; }
+.paper:hover .cap .a, .paper:focus-within .cap .a, .paper.play .cap .a { opacity: 0; }
+
+/* BibTeX toggle sits on the links line; flex keeps it there in every browser. */
+.plinks { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 0.35em; }
+details.bib[open] { flex-basis: 100%; }
+details.bib summary { display: inline; cursor: pointer; color: var(--link); list-style: none; }
+details.bib summary::-webkit-details-marker { display: none; }
+details.bib summary:hover { text-decoration: underline; text-underline-offset: 2px; }
+details.bib pre {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  background: #fafafa;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  font: 12px/1.5 var(--mono);
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.more { padding: 4px 18px 0; }
+.more .item { padding: 9px 0; }
+.more .title { font-weight: 700; }
+
+/* ---------- Lists: experience, awards, teaching ---------- */
+
+.rows { list-style: none; margin: 0; padding: 0 18px; }
+.rows li { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 5px 0; }
+.rows .when { color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.rows .sub { display: block; color: var(--muted); font-size: 14px; }
+
+footer { margin: 56px 0 40px; text-align: center; color: var(--muted); font-size: 13px; }
+
+/* ---------- Scroll reveal (only when JavaScript runs) ---------- */
+
+.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.js .reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .frame img, .cap span { transition: none; }
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 640px) {
+  .top { grid-template-columns: 1fr; gap: 18px; padding-top: 32px; }
+  .top .photo { order: -1; justify-self: center; width: 140px; height: 140px; }
+  .paper { grid-template-columns: 1fr; gap: 12px; padding: 16px 12px; }
+  .media { justify-self: center; }
+  .rows, .more { padding-left: 12px; padding-right: 12px; }
+  .rows li { flex-direction: column; gap: 0; }
+}
