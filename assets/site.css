@@ -4,7 +4,6 @@
   --text: #1a1a1a;
   --muted: #6a6a6a;
   --link: #1772d0;
-  --hl: #fff9d6;
   --rule: #e6e6e6;
   --note: #c0392b;
   --font: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -38,8 +37,16 @@ p { margin: 0 0 10px; }
 /* ---------- Sections ---------- */
 
 h2 { font-size: 22px; font-weight: 400; margin: 44px 0 10px; }
-.lead { margin-bottom: 18px; }
-.hl { background: var(--hl); padding: 1px 2px; }
+.lead { margin-bottom: 6px; }
+
+/* show selected / show all (only offered when JavaScript runs; otherwise every paper is listed) */
+.pubtoggle { display: none; margin-left: 6px; font-size: 15px; color: var(--muted); }
+.js .pubtoggle { display: inline; }
+.pubtoggle button { font: inherit; color: var(--link); background: none; border: 0; padding: 0; cursor: pointer; }
+.pubtoggle button:hover { text-decoration: underline; text-underline-offset: 3px; }
+.pubtoggle button[aria-pressed="true"] { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+.js .pubs[data-view="selected"] [data-selected="false"] { display: none; }
+.year h3 { font-size: 16px; font-weight: 700; margin: 26px 0 0; padding: 0 18px; }
 
 /* ---------- Papers ---------- */
 
@@ -51,11 +58,12 @@ h2 { font-size: 22px; font-weight: 400; margin: 44px 0 10px; }
   padding: 20px 18px;
   border-radius: 6px;
 }
-.paper.highlight { background: var(--hl); }
 .paper .title { font-weight: 700; }
 .me { font-weight: 700; }
 .note { color: var(--note); }
 .paper .desc { margin: 8px 0 0; }
+/* Papers without a figure line up with the text column of the ones above. */
+.paper.noimg { grid-template-columns: 1fr; padding-top: 10px; padding-bottom: 10px; padding-left: 244px; }
 
 /* Two stacked images; the second fades in on hover, keyboard focus, or (touch) scroll. */
 .media { display: block; color: var(--muted); }
@@ -100,9 +108,6 @@ details.bib pre {
   overflow-x: auto;
 }
 
-.more { padding: 4px 18px 0; }
-.more .item { padding: 9px 0; }
-.more .title { font-weight: 700; }
 
 /* ---------- Lists: experience, awards, teaching ---------- */
 
@@ -130,6 +135,8 @@ footer { margin: 56px 0 40px; text-align: center; color: var(--muted); font-size
   .top .photo { order: -1; justify-self: center; width: 140px; height: 140px; }
   .paper { grid-template-columns: 1fr; gap: 12px; padding: 16px 12px; }
   .media { justify-self: center; }
-  .rows, .more { padding-left: 12px; padding-right: 12px; }
+  .paper.noimg { padding-left: 12px; }
+  .year h3 { padding: 0 12px; }
+  .rows { padding-left: 12px; padding-right: 12px; }
   .rows li { flex-direction: column; gap: 0; }
 }

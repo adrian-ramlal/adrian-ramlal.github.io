@@ -17,6 +17,16 @@
     items.forEach(function (el) { revealer.observe(el); });
   }
 
+  // show selected / show all
+  var pubs = document.querySelector('.pubs');
+  var toggles = document.querySelectorAll('.pubtoggle button');
+  toggles.forEach(function (b) {
+    b.addEventListener('click', function () {
+      pubs.dataset.view = b.dataset.view;
+      toggles.forEach(function (o) { o.setAttribute('aria-pressed', String(o === b)); });
+    });
+  });
+
   // Touch screens have no hover, so a paper's second image shows while its row crosses the middle of the screen.
   if (canObserve && window.matchMedia('(hover: none)').matches) {
     var middle = new IntersectionObserver(function (entries) {

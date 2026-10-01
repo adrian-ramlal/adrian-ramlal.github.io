@@ -43,10 +43,15 @@
 
 <main>
 
-<h2>Research</h2>
-<p class="lead">My research is on physics-informed 3D reconstruction. I estimate physical parameters, such as friction, initial velocity and material properties, from observed behaviour, and use differentiable or learned simulators to keep a reconstruction consistent with physics, for example while an object is hidden from every camera. My MASc thesis is <em>Physics-Informed Dynamic 3D Reconstruction: From Gaussian Splatting and Rigid-Body Simulation to Inverse Material Estimation</em>. Representative papers are <span class="hl">highlighted</span>.</p>
+<h2>Research <span class="pubtoggle" role="group" aria-label="Which papers to show">(<button type="button" data-view="selected" aria-pressed="true">show selected</button> / <button type="button" data-view="all" aria-pressed="false">show all</button>)</span></h2>
+<p class="lead">My research is on physics-informed 3D reconstruction. I estimate physical parameters, such as friction, initial velocity and material properties, from observed behaviour, and use differentiable or learned simulators to keep a reconstruction consistent with physics, for example while an object is hidden from every camera. My MASc thesis is <em>Physics-Informed Dynamic 3D Reconstruction: From Gaussian Splatting and Rigid-Body Simulation to Inverse Material Estimation</em>.</p>
 
-<article class="paper highlight reveal" data-swap>
+<div class="pubs" data-view="selected">
+
+<section class="year">
+<h3>2026</h3>
+
+<article class="paper reveal" data-swap data-selected="true">
   <a class="media" href="persistgs/" tabindex="-1" aria-hidden="true">
     <span class="frame">
       <img class="a" src="assets/papers/persistgs-a.webp" width="150" height="150" alt="">
@@ -76,7 +81,7 @@
   </div>
 </article>
 
-<article class="paper highlight reveal" data-swap>
+<article class="paper reveal" data-swap data-selected="true">
   <a class="media" href="inverse-material/" tabindex="-1" aria-hidden="true">
     <span class="frame">
       <img class="a" src="assets/papers/inverse-material-a.webp" width="125" height="150" alt="">
@@ -105,7 +110,19 @@
   </div>
 </article>
 
-<article class="paper reveal" data-swap>
+<article class="paper noimg reveal" data-selected="false">
+  <div>
+    <span class="title">Office Hours: A Multiday Office Cubicle Dataset for Associative Embodied VQA</span><br>
+    Fernando Jose Pena Cantu, <span class="me">Adrian Ramlal</span>, Junfeng Lei, Vani Agrawal, Kseniia Buzko, Yifeng Xu, Alexander Wong, John S. Zelek, Yuchen Cui, Yuhao Chen<br>
+    Manuscript, 2026
+  </div>
+</article>
+</section>
+
+<section class="year">
+<h3>2025</h3>
+
+<article class="paper reveal" data-swap data-selected="true">
   <a class="media" href="https://arxiv.org/abs/2606.00444" tabindex="-1" aria-hidden="true">
     <span class="frame">
       <img class="a" src="assets/papers/mesh-gaussian-a.webp" width="200" height="119" alt="">
@@ -135,7 +152,38 @@
   </div>
 </article>
 
-<article class="paper reveal" data-swap>
+<article class="paper noimg reveal" data-selected="false">
+  <div>
+    <a class="title" href="https://arxiv.org/abs/2606.00452">Beyond Static Gaussians: An Empirical Investigation of Architectural Paradigms for Dynamic 3D Scene Reconstruction</a><br>
+    <span class="me">Adrian Ramlal</span>, John S. Zelek<br>
+    <em>Conference on Vision and Intelligent Systems (CVIS)</em>, 2025
+    <div class="plinks"><a href="https://arxiv.org/abs/2606.00452">arXiv</a> / <a href="https://openjournals.uwaterloo.ca/index.php/vsl/article/view/7144">journal</a></div>
+  </div>
+</article>
+
+<article class="paper noimg reveal" data-selected="false">
+  <div>
+    <a class="title" href="https://openjournals.uwaterloo.ca/index.php/vsl/article/view/7135">Anisotropic Kernels for Neural Implicit Surface Reconstruction</a><br>
+    Soyeon Jang, <span class="me">Adrian Ramlal</span>, Yuhao Chen, Paul W. Fieguth<br>
+    <em>Conference on Vision and Intelligent Systems (CVIS)</em>, 2025 <span class="note">(Oral)</span>
+    <div class="plinks"><a href="https://openjournals.uwaterloo.ca/index.php/vsl/article/view/7135">journal</a></div>
+  </div>
+</article>
+
+<article class="paper noimg reveal" data-selected="false">
+  <div>
+    <a class="title" href="https://openjournals.uwaterloo.ca/index.php/vsl/article/view/7216">Optical Flow-Enhanced Thermal UAV Detection Under Camera Ego-Motion for Real-Time Tactical C-UAV</a><br>
+    Bob Maser, Adam Srebrnjak Yang, <span class="me">Adrian Ramlal</span>, John S. Zelek<br>
+    <em>Conference on Vision and Intelligent Systems (CVIS)</em>, 2025 <span class="note">(Oral)</span>
+    <div class="plinks"><a href="https://openjournals.uwaterloo.ca/index.php/vsl/article/view/7216">journal</a></div>
+  </div>
+</article>
+</section>
+
+<section class="year">
+<h3>2024</h3>
+
+<article class="paper reveal" data-swap data-selected="true">
   <a class="media" href="https://arxiv.org/abs/2606.00450" tabindex="-1" aria-hidden="true">
     <span class="frame">
       <img class="a" src="assets/papers/upsampling-a.webp" width="130" height="150" alt="">
@@ -164,28 +212,8 @@
     <p class="desc">Proposes a depth-guided point-lifting method and compares it with five upsampling strategies for densifying the sparse COLMAP point clouds that initialize 3D Gaussian Splatting, on 17 scenes.</p>
   </div>
 </article>
+</section>
 
-<div class="more reveal">
-  <div class="item">
-    <a class="title" href="https://arxiv.org/abs/2606.00452">Beyond Static Gaussians: An Empirical Investigation of Architectural Paradigms for Dynamic 3D Scene Reconstruction</a><br>
-    <span class="me">Adrian Ramlal</span>, John S. Zelek<br>
-    <em>Conference on Vision and Intelligent Systems (CVIS)</em>, 2025 &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2606.00452">arXiv</a> / <a href="https://openjournals.uwaterloo.ca/index.php/vsl/article/view/7144">journal</a>
-  </div>
-  <div class="item">
-    <a class="title" href="https://openjournals.uwaterloo.ca/index.php/vsl/article/view/7135">Anisotropic Kernels for Neural Implicit Surface Reconstruction</a><br>
-    Soyeon Jang, <span class="me">Adrian Ramlal</span>, Yuhao Chen, Paul W. Fieguth<br>
-    <em>Conference on Vision and Intelligent Systems (CVIS)</em>, 2025 <span class="note">(Oral)</span>
-  </div>
-  <div class="item">
-    <a class="title" href="https://openjournals.uwaterloo.ca/index.php/vsl/article/view/7216">Optical Flow-Enhanced Thermal UAV Detection Under Camera Ego-Motion for Real-Time Tactical C-UAV</a><br>
-    Bob Maser, Adam Srebrnjak Yang, <span class="me">Adrian Ramlal</span>, John S. Zelek<br>
-    <em>Conference on Vision and Intelligent Systems (CVIS)</em>, 2025 <span class="note">(Oral)</span>
-  </div>
-  <div class="item">
-    <span class="title">Office Hours: A Multiday Office Cubicle Dataset for Associative Embodied VQA</span><br>
-    Fernando Jose Pena Cantu, <span class="me">Adrian Ramlal</span>, Junfeng Lei, Vani Agrawal, Kseniia Buzko, Yifeng Xu, Alexander Wong, John S. Zelek, Yuchen Cui, Yuhao Chen<br>
-    Manuscript, 2026
-  </div>
 </div>
 
 <section class="reveal">
