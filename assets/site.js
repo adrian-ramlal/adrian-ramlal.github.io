@@ -1,4 +1,4 @@
-// Scroll reveal for page sections, and scroll-driven thumbnail swaps on touch screens.
+// Scroll reveal for page sections, and the selected/all toggle for papers.
 (function () {
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var canObserve = 'IntersectionObserver' in window;
@@ -26,12 +26,4 @@
       toggles.forEach(function (o) { o.setAttribute('aria-pressed', String(o === b)); });
     });
   });
-
-  // Touch screens have no hover, so a paper's second image shows while its row crosses the middle of the screen.
-  if (canObserve && window.matchMedia('(hover: none)').matches) {
-    var middle = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { e.target.classList.toggle('play', e.isIntersecting); });
-    }, { rootMargin: '-38% 0px -38% 0px' });
-    document.querySelectorAll('[data-swap]').forEach(function (el) { middle.observe(el); });
-  }
 })();

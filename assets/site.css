@@ -62,34 +62,12 @@ h2 { font-size: 22px; font-weight: 400; margin: 44px 0 10px; }
 .me { font-weight: 700; }
 .note { color: var(--note); }
 .paper .desc { margin: 8px 0 0; }
-/* Papers without a figure line up with the text column of the ones above. */
-.paper.noimg { grid-template-columns: 1fr; padding-top: 10px; padding-bottom: 10px; padding-left: 244px; }
 
-/* Two stacked images; the second fades in on hover, keyboard focus, or (touch) scroll. */
+/* Animated 16:10 thumbnail; visitors who ask for reduced motion get the still through <picture>. */
 .media { display: block; color: var(--muted); }
 .media:hover { text-decoration: none; }
-.frame {
-  position: relative;
-  display: block;
-  width: 200px;
-  height: 150px;
-  background: #fff;
-  border-radius: 4px;
-  overflow: hidden;
-}
-.frame img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: opacity 0.55s ease;
-}
-.cap { position: relative; display: block; height: 18px; margin-top: 6px; font-size: 12px; text-align: center; }
-.cap span { position: absolute; inset: 0; transition: opacity 0.55s ease; }
-.frame .b, .cap .b { opacity: 0; }
-.paper:hover .b, .paper:focus-within .b, .paper.play .b { opacity: 1; }
-.paper:hover .cap .a, .paper:focus-within .cap .a, .paper.play .cap .a { opacity: 0; }
+.media img { width: 200px; height: auto; aspect-ratio: 16 / 10; border-radius: 4px; }
+.cap { display: block; margin-top: 6px; font-size: 12px; line-height: 1.4; text-align: center; }
 
 /* BibTeX toggle sits on the links line; flex keeps it there in every browser. */
 .plinks { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 0.35em; }
@@ -125,7 +103,6 @@ footer { margin: 56px 0 40px; text-align: right; color: var(--muted); font-size:
 
 @media (prefers-reduced-motion: reduce) {
   .js .reveal { opacity: 1; transform: none; transition: none; }
-  .frame img, .cap span { transition: none; }
 }
 
 /* ---------- Small screens ---------- */
@@ -134,8 +111,8 @@ footer { margin: 56px 0 40px; text-align: right; color: var(--muted); font-size:
   .top { grid-template-columns: 1fr; gap: 18px; padding-top: 32px; }
   .top .photo { order: -1; justify-self: center; width: 140px; height: 140px; }
   .paper { grid-template-columns: 1fr; gap: 12px; padding: 16px 12px; }
-  .media { justify-self: center; }
-  .paper.noimg { padding-left: 12px; }
+  .media { justify-self: center; width: 100%; max-width: 320px; }
+  .media img { width: 100%; }
   .year h3 { padding: 0 12px; }
   .rows { padding-left: 12px; padding-right: 12px; }
   .rows li { flex-direction: column; gap: 0; }

@@ -29,7 +29,7 @@
     <div class="bio">
       <p>I am a Research Associate in the Vision and Image Processing Lab at the University of Waterloo. I received my MASc in Systems Design Engineering from Waterloo in 2026, advised by <a href="https://uwaterloo.ca/systems-design-engineering/profile/jzelek">Prof. John S. Zelek</a>.</p>
       <p>Before that, I received my BASc in Computer Engineering from the University of Toronto, where my capstone was a research project on controllable music generation supervised by <a href="https://www.ece.utoronto.ca/people/eyolfson-j/">Prof. Jon Eyolfson</a>. I also interned at Intel, writing behavioural models of high-speed serial deserializers.</p>
-      <p>I am applying to PhD programs for Fall 2027.</p>
+      <p>I am looking for full-time research scientist and research engineer positions, and I am applying to PhD programs for Fall 2027.</p>
     </div>
     <p class="links">
       <a href="mailto:adrian.ramlal@uwaterloo.ca">Email</a> &nbsp;/&nbsp;
@@ -44,21 +44,21 @@
 
 <main>
 
-<h2>Research <span class="pubtoggle" role="group" aria-label="Which papers to show">(<button type="button" data-view="selected" aria-pressed="true">show selected</button> / <button type="button" data-view="all" aria-pressed="false">show all</button>)</span></h2>
+<h2>Research <span class="pubtoggle" role="group" aria-label="Which papers to show">(<button type="button" data-view="selected" aria-pressed="false">show selected</button> / <button type="button" data-view="all" aria-pressed="true">show all</button>)</span></h2>
 <p class="lead">I work on physics-informed 3D reconstruction. Methods such as 3D Gaussian Splatting reproduce how a scene looks, but not how it moves or what it is made of. My work estimates physical properties from observations and uses simulation to keep a reconstruction physically consistent: recovering an object's friction and velocity so it stays in the scene while no camera can see it, or recovering the material parameters behind a simulated orange peel. This work forms my MASc thesis, <em>Physics-Informed Dynamic 3D Reconstruction: From Gaussian Splatting and Rigid-Body Simulation to Inverse Material Estimation</em>.</p>
 
-<div class="pubs" data-view="selected">
+<div class="pubs" data-view="all">
 
 <section class="year">
 <h3>2026</h3>
 
-<article class="paper reveal" data-swap data-selected="true">
+<article class="paper reveal" data-selected="true">
   <a class="media" href="persistgs/" tabindex="-1" aria-hidden="true">
-    <span class="frame">
-      <img class="a" src="assets/papers/persistgs-a.webp" width="150" height="150" alt="">
-      <img class="b" src="assets/papers/persistgs-b.webp" width="150" height="150" alt="">
-    </span>
-    <span class="cap"><span class="a">Constant velocity vs. ground truth</span><span class="b">PersistGS vs. ground truth</span></span>
+    <picture>
+      <source srcset="assets/thumbnails/persistgs-still.webp" media="(prefers-reduced-motion: reduce)">
+      <img src="assets/thumbnails/persistgs.webp" width="200" height="125" alt="">
+    </picture>
+    <span class="cap">No physics prior | PersistGS</span>
   </a>
   <div>
     <a class="title" href="persistgs/">PersistGS: Differentiable Physics for Object Permanence in 4D Gaussian Splatting</a><br>
@@ -82,13 +82,13 @@
   </div>
 </article>
 
-<article class="paper reveal" data-swap data-selected="true">
+<article class="paper reveal" data-selected="true">
   <a class="media" href="inverse-material/" tabindex="-1" aria-hidden="true">
-    <span class="frame">
-      <img class="a" src="assets/papers/inverse-material-a.webp" width="125" height="150" alt="">
-      <img class="b" src="assets/papers/inverse-material-b.webp" width="125" height="150" alt="">
-    </span>
-    <span class="cap"><span class="a">Intact</span><span class="b">Separated</span></span>
+    <picture>
+      <source srcset="assets/thumbnails/latent-rl-still.webp" media="(prefers-reduced-motion: reduce)">
+      <img src="assets/thumbnails/latent-rl.webp" width="200" height="125" alt="">
+    </picture>
+    <span class="cap">AnisoMPM peeling simulation</span>
   </a>
   <div>
     <a class="title" href="inverse-material/">Latent Space Reinforcement Learning for Inverse Material Estimation in Food Fracture Simulation</a><br>
@@ -111,7 +111,14 @@
   </div>
 </article>
 
-<article class="paper noimg reveal" data-selected="false">
+<article class="paper reveal" data-selected="false">
+  <span class="media" aria-hidden="true">
+    <picture>
+      <source srcset="assets/thumbnails/office-hours-still.webp" media="(prefers-reduced-motion: reduce)">
+      <img src="assets/thumbnails/office-hours.webp" width="200" height="125" loading="lazy" alt="">
+    </picture>
+    <span class="cap">Same cubicle on two visits</span>
+  </span>
   <div>
     <span class="title">Office Hours: A Multiday Office Cubicle Dataset for Associative Embodied VQA</span><br>
     Fernando Jose Pena Cantu, <span class="me">Adrian Ramlal</span>, Junfeng Lei, Vani Agrawal, Kseniia Buzko, Yifeng Xu, Alexander Wong, John S. Zelek, Yuchen Cui, Yuhao Chen<br>
@@ -123,13 +130,13 @@
 <section class="year">
 <h3>2025</h3>
 
-<article class="paper reveal" data-swap data-selected="true">
+<article class="paper reveal" data-selected="true">
   <a class="media" href="https://arxiv.org/abs/2606.00444" tabindex="-1" aria-hidden="true">
-    <span class="frame">
-      <img class="a" src="assets/papers/mesh-gaussian-a.webp" width="200" height="119" alt="">
-      <img class="b" src="assets/papers/mesh-gaussian-b.webp" width="200" height="119" alt="">
-    </span>
-    <span class="cap"><span class="a">DG-Mesh reconstruction</span><span class="b">After fixed-topology conversion</span></span>
+    <picture>
+      <source srcset="assets/thumbnails/mesh-gaussian-still.webp" media="(prefers-reduced-motion: reduce)">
+      <img src="assets/thumbnails/mesh-gaussian.webp" width="200" height="125" loading="lazy" alt="">
+    </picture>
+    <span class="cap">DG-Mesh render | mesh (Liu et al.)</span>
   </a>
   <div>
     <a class="title" href="https://arxiv.org/abs/2606.00444">Real-Time Physics Simulation with Dynamic Mesh-Gaussian Reconstructions</a><br>
@@ -153,7 +160,14 @@
   </div>
 </article>
 
-<article class="paper noimg reveal" data-selected="false">
+<article class="paper reveal" data-selected="false">
+  <a class="media" href="https://arxiv.org/abs/2606.00452" tabindex="-1" aria-hidden="true">
+    <picture>
+      <source srcset="assets/thumbnails/beyond-static-still.webp" media="(prefers-reduced-motion: reduce)">
+      <img src="assets/thumbnails/beyond-static.webp" width="200" height="125" loading="lazy" alt="">
+    </picture>
+    <span class="cap">RGB | deformation from canonical</span>
+  </a>
   <div>
     <a class="title" href="https://arxiv.org/abs/2606.00452">Beyond Static Gaussians: An Empirical Investigation of Architectural Paradigms for Dynamic 3D Scene Reconstruction</a><br>
     <span class="me">Adrian Ramlal</span>, John S. Zelek<br>
@@ -162,7 +176,14 @@
   </div>
 </article>
 
-<article class="paper noimg reveal" data-selected="false">
+<article class="paper reveal" data-selected="false">
+  <a class="media" href="https://openjournals.uwaterloo.ca/index.php/vsl/article/view/7135" tabindex="-1" aria-hidden="true">
+    <picture>
+      <source srcset="assets/thumbnails/anisotropic-kernels-still.webp" media="(prefers-reduced-motion: reduce)">
+      <img src="assets/thumbnails/anisotropic-kernels.webp" width="200" height="125" loading="lazy" alt="">
+    </picture>
+    <span class="cap">RGB | learned kernel sharpness</span>
+  </a>
   <div>
     <a class="title" href="https://openjournals.uwaterloo.ca/index.php/vsl/article/view/7135">Anisotropic Kernels for Neural Implicit Surface Reconstruction</a><br>
     Soyeon Jang, <span class="me">Adrian Ramlal</span>, Yuhao Chen, Paul W. Fieguth<br>
@@ -171,7 +192,14 @@
   </div>
 </article>
 
-<article class="paper noimg reveal" data-selected="false">
+<article class="paper reveal" data-selected="false">
+  <a class="media" href="https://openjournals.uwaterloo.ca/index.php/vsl/article/view/7216" tabindex="-1" aria-hidden="true">
+    <picture>
+      <source srcset="assets/thumbnails/uav-detection-still.webp" media="(prefers-reduced-motion: reduce)">
+      <img src="assets/thumbnails/uav-detection.webp" width="200" height="125" loading="lazy" alt="">
+    </picture>
+    <span class="cap">Thermal video, ground-truth box</span>
+  </a>
   <div>
     <a class="title" href="https://openjournals.uwaterloo.ca/index.php/vsl/article/view/7216">Optical Flow-Enhanced Thermal UAV Detection Under Camera Ego-Motion for Real-Time Tactical C-UAV</a><br>
     Bob Maser, Adam Srebrnjak Yang, <span class="me">Adrian Ramlal</span>, John S. Zelek<br>
@@ -184,13 +212,13 @@
 <section class="year">
 <h3>2024</h3>
 
-<article class="paper reveal" data-swap data-selected="true">
+<article class="paper reveal" data-selected="true">
   <a class="media" href="https://arxiv.org/abs/2606.00450" tabindex="-1" aria-hidden="true">
-    <span class="frame">
-      <img class="a" src="assets/papers/upsampling-a.webp" width="130" height="150" alt="">
-      <img class="b" src="assets/papers/upsampling-b.webp" width="130" height="150" alt="">
-    </span>
-    <span class="cap"><span class="a">Depth-guided point lifting</span><span class="b">3DGS seed points</span></span>
+    <picture>
+      <source srcset="assets/thumbnails/pc-upsampling-still.webp" media="(prefers-reduced-motion: reduce)">
+      <img src="assets/thumbnails/pc-upsampling.webp" width="200" height="125" loading="lazy" alt="">
+    </picture>
+    <span class="cap">Sparse vs. depth-lifted points</span>
   </a>
   <div>
     <a class="title" href="https://arxiv.org/abs/2606.00450">Optimizing 3D Gaussian Splatting via Point Cloud Upsampling</a><br>
@@ -223,7 +251,7 @@
     <li><span><strong>Research Associate</strong>, Vision and Image Processing Lab, University of Waterloo<span class="sub">Knowledge graphs of CAD assemblies, with an industry partner.</span></span><span class="when">2026–present</span></li>
     <li><span><strong>Graduate Research Assistant</strong>, Vision and Image Processing Lab, University of Waterloo<span class="sub">MASc research; the papers above.</span></span><span class="when">2024–2026</span></li>
     <li><span><strong>Full-Stack Software Developer</strong>, Ministry of Education, Trinidad and Tobago<span class="sub">Role-based access control and audit logging for a national education platform.</span></span><span class="when">2023–2024</span></li>
-    <li><span><strong>Undergraduate Research (Capstone)</strong>, University of Toronto, supervised by <a href="https://www.ece.utoronto.ca/people/eyolfson-j/">Prof. Jon Eyolfson</a><span class="sub">An LSTM for controllable music generation, conditioned on harmonic and rhythmic parameters. Received a Certificate of Distinction.</span></span><span class="when">2022–2023</span></li>
+    <li><span><strong>Undergraduate Research (Capstone)</strong>, University of Toronto</a><span class="sub">An LSTM for controllable music generation, conditioned on harmonic and rhythmic parameters. Received a Certificate of Distinction.</span></span><span class="when">2022–2023</span></li>
     <li><span><strong>Digital Logic Design Intern</strong>, Intel Corporation<span class="sub">SystemVerilog behavioural models and testbenches for high-speed serial deserializers.</span></span><span class="when">2021–2022</span></li>
   </ul>
 </section>
