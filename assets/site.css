@@ -19,7 +19,7 @@ a:focus-visible, summary:focus-visible, button:focus-visible { outline: 2px soli
 img { display: block; max-width: 100%; }
 p { margin: 0 0 10px; }
 
-.wrap { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
 
 /* ---------- Header ---------- */
 
@@ -52,8 +52,8 @@ h2 { font-size: 22px; font-weight: 400; margin: 44px 0 10px; }
 
 .paper {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 26px;
+  grid-template-columns: 240px 1fr;
+  gap: 28px;
   align-items: center;
   padding: 20px 18px;
   border-radius: 6px;
@@ -64,10 +64,8 @@ h2 { font-size: 22px; font-weight: 400; margin: 44px 0 10px; }
 .paper .desc { margin: 8px 0 0; }
 
 /* Animated 16:10 thumbnail; visitors who ask for reduced motion get the still through <picture>. */
-.media { display: block; color: var(--muted); }
-.media:hover { text-decoration: none; }
-.media img { width: 200px; height: auto; aspect-ratio: 16 / 10; border-radius: 4px; }
-.cap { display: block; margin-top: 6px; font-size: 12px; line-height: 1.4; text-align: center; }
+.media { display: block; }
+.media img { width: 240px; height: auto; aspect-ratio: 16 / 10; border-radius: 4px; }
 
 /* BibTeX toggle sits on the links line; flex keeps it there in every browser. */
 .plinks { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 0.35em; }
